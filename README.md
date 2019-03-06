@@ -1,7 +1,7 @@
 # gulp4-display-ads
 Updated gulpfile.js for simple display-ads task management
 
-
+```
 $ cd example
 $ npm install
 
@@ -40,16 +40,18 @@ misiak@Aerosol:~/Desktop/Schawk/gulp4-display-ads/example$ gulp --tasks
 [23:59:48]       ├── version
 [23:59:48]       ├── imagemin
 [23:59:48]       └── copyfont
+```
 
 Main tasks: work, clean, build, pack, archive
 
 Workflow
 
+```
 $ gulp work
-
+```
 When happy with creative
-
+```
 $ gulp clean && gulp build && gulp pack
-
+```
 
 
