@@ -1,0 +1,341 @@
+$add_height: 250px;
+$add_width: 300px;
+
+@font-face {
+    font-family:"BentonSansBold";
+    src: url("BentonSansBold.woff") format('woff');
+}
+
+@font-face {
+    font-family:"BetterTimes";
+    src: url("BetterTimes.woff") format('woff');
+}
+
+#exit {
+    position: absolute;
+    width:100%;
+    height:100%;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.frame {
+    position: absolute;
+    display: block;
+    width: $add_width;
+    height: $add_height;
+    left: 0;
+    top: 0;
+    background-size: 100% 100%;    
+}
+
+#bg {
+    display: block;
+    position: absolute;
+/*    display: block;
+    width: 726px;
+    height: 486px;
+    top: -113px;
+    left: -25px;
+    transform-origin: 25% 38%;*/
+}
+
+/* comment */
+
+sup {
+    font-size: 3px;
+    vertical-align: 6px;
+    padding-left: 1px;
+}
+
+#rd {
+    display: none;
+}
+
+#rd_text {}
+
+#amex_logo {
+    display: block;
+    position: absolute;
+    width: $add_width;
+    height: $add_height;
+}
+
+#amex_headline {
+    display: block;
+}
+
+#blue {
+    background: #00175a;
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 250px;
+    top: 168px;
+    left: 0px;
+}
+
+#blueCover {
+    background: #00175a;
+    position: absolute;
+    display: block;
+    opacity: 1;
+    width: $add_width;
+    height: $add_height;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+}
+
+#text1 {
+    display: block;
+    color: white;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#text2 {
+    display: block;
+    color: white;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#text3 {
+    display: block;
+    color: white;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#text4 {
+    display: block;
+    color: white;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.texts {
+    left: 14px;
+    top: 190px;
+    width: 543px;
+    font-size: 13.4px;
+    /*    border: 1px solid red;*/
+    /*
+    line-height: 32px;
+    letter-spacing: 0px;
+*/
+
+/*
+    display: none;
+    opacity: 0;
+*/
+
+}
+
+
+#taglines_holder {
+    
+}
+
+
+
+.taglines {
+
+    position: absolute;
+    font-family: 'BentonSansBold';
+    font-size: 10px;
+
+    top: 197px;
+    left: 14px;
+
+    text-align: left;
+    letter-spacing: 0.4px;
+
+/*    border: 1px solid green;*/
+    vertical-align: middle;
+    opacity: 1;
+    
+}
+
+#tagline1 {
+    position: absolute;
+}
+
+#tagline2 {
+    position: absolute;
+}
+
+#tagline3 {
+    position: absolute;
+}
+
+
+
+
+.begs {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#beg1 {
+
+}
+
+#beg2 {
+    opacity: 0;
+}
+
+#beg3 {
+    opacity: 0;
+}
+
+.vampire {
+    font-family: 'BetterTimes';
+    min-width: 60px;
+    min-height: 20px;
+    opacity: 1;
+
+
+ //border: 1px solid yellow;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+#vampire1 {
+    font-size: 21px;
+    line-height: 21px;    
+    
+}
+
+#vampire2 {
+    font-size: 28px;
+    line-height: 21px;    
+    
+}
+
+#vampire3 {
+    font-size: 21px;
+    line-height: 21px;    
+    
+}
+
+.endings {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#ending1 {
+
+}
+
+#ending2 {
+ opacity: 0;
+}
+
+
+#ending3 {
+    opacity: 0;
+}
+
+
+#test_vampire1 {
+
+}
+
+#test_vampire2 {
+
+}
+
+#test_vampire1 {
+
+}
+
+
+.tests {
+    font-family: 'BetterTimes';
+    display: block;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#text_tcs {
+    display: block;
+/*font-size: 5.6px;
+    text-align: left;
+    line-height: 17px;
+    top: 225px;
+    left: 17px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;*/
+}
+
+#add {
+    /*    border: 1px solid black;*/
+    border: none;
+    width: $add_width;
+    height: $add_height;
+    overflow: hidden;
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    background: #00175a;
+	display: none;
+}
+
+#preview {
+    opacity: 1;
+    display: block;
+}
+
+#cta {
+    display: block;	
+/*    color: #00175a;
+    background: #ffffff;
+    width: auto;
+    height: auto;
+    padding: 0.3em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 101px;
+    left: 166px;
+    border-radius: 2px;*/
+}
+
+#cta_text {
+/*    pointer-events: none;
+    user-select: none;
+    text-align: center;
+    font-size: 7px;*/
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
