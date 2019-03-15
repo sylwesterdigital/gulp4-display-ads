@@ -1,12 +1,19 @@
+/* 
+	gulp v4 task generic runner 
+	author: Sylwester K. Mielniczuk
+	email: flaboy.com@gmail.com
+
+*/
+
 'use strict';
 
 var gulp = require('gulp');
 var fs = require('fs');
 var path = require('path');
 var browserSync = require('browser-sync').create();
-var less = require('gulp-less');
+/*var less = require('gulp-less');*/
 var sass = require('gulp-sass');
-var babel = require('gulp-babel');
+/*var babel = require('gulp-babel');*/
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
@@ -19,7 +26,7 @@ var zip = require('gulp-zip');
 var size = require('gulp-size');
 var useref = require('gulp-useref');
 var gulpVersionNumber = require("gulp-version-number");
-const cssnano = require('gulp-cssnano');
+var cssnano = require('gulp-cssnano');
 
 
 var paths = {
@@ -30,17 +37,15 @@ var paths = {
   scripts: {
     src: 'src/js/**/*.js',
     dest: 'dist/js/'
-  }
+  },
+  index: {
+    src: 'src/*.html',
+    dest: 'dist/'
+  }	
 };
 
-/* Not all tasks need to use streams, a gulpfile is just another node program
- * and you can use all packages available on npm, but it must return either a
- * Promise, a Stream or take a callback and call it
- */
 
 function clean() {
-  // You can use multiple globbing patterns as you would with `gulp.src`,
-  // for example if you are using del 2.0 or above, return its promise
   return del([ 'dist' ]);
 }
 
@@ -60,7 +65,6 @@ function bsyncTest() {
     },
   })	
 }
-
 
 function imagemin() {
     return gulp.src('src/images/**/*.+(png|jpg|gif|svg)')
@@ -89,14 +93,6 @@ function pack() {
         .pipe(zip(__dirname.match(/([^\/]*)\/*$/)[1]+'.zip'))
         .pipe(gulp.dest('../')).pipe(size());	
 }
-
-function archive() {
-    return gulp.src('src/**')
-        .pipe(zip(__dirname.match(/([^\/]*)\/*$/)[1]+'-src.zip'))
-        .pipe(gulp.dest('archive/')).pipe(size());	
-}
-
-
 
 function version() {
 	var json = fs.readFileSync("package.json", "utf8");
@@ -145,6 +141,14 @@ function workStyles() {
         .pipe(browserSync.stream());
 }
 
+function workHtml() {
+  return gulp.src('src/*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('dist'))
+}
+
+
+
 function scripts() {
   return gulp.src(paths.scripts.src, { sourcemaps: true })
 /*
@@ -157,12 +161,15 @@ function scripts() {
 }
 
 function watch() {
+	gulp.watch(paths.index.src, workHtml).on('change', browserSync.reload);
 	gulp.watch(paths.scripts.src, scripts).on('change', browserSync.reload);
 	gulp.watch(paths.styles.src, workStyles).on('change', browserSync.stream);
 }
 
 var build = gulp.series(gulp.parallel(version, imagemin, copyfont));
+
 var work = gulp.series(gulp.parallel(bsync, watch));
+
 var test = gulp.series(gulp.parallel(bsyncTest));
 
 
@@ -175,14 +182,9 @@ exports.imagemin = imagemin;
 exports.pack = pack;
 exports.copyfont = copyfont;
 exports.version = version;
-
 exports.build = build;
+
 exports.work = work;
+
 exports.test = test;
-exports.archive = archive;
-
-
-
-
-
 exports.default = build;
