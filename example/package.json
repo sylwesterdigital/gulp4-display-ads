@@ -9,13 +9,14 @@
   "author": "Sylwester Mielniczuk",
   "license": "ISC",
   "dependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "colors": "^1.3.3",
     "del": "^4.0.0",
     "fs": "0.0.1-security",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.0.0",
+    "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssfont64": "0.0.1",
     "gulp-fontmin": "^0.7.4",
@@ -24,7 +25,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "gulp-version-number": "^0.1.7",
+    "gulp-version-number": "^0.2.4",
     "tinypng": "^0.1.1"
   },
   "devDependencies": {
@@ -32,7 +33,7 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/register": "^7.0.0",
     "bump": "^0.2.5",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-bump": "^3.1.3",
     "gulp-cssnano": "^2.1.3",
     "gulp-if": "^2.0.2",

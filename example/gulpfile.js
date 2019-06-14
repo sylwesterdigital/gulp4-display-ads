@@ -1,28 +1,30 @@
 'use strict';
 
-var gulp = require('gulp');
-var fs = require('fs');
-var path = require('path');
-var browserSync = require('browser-sync').create();
-var less = require('gulp-less');
-var sass = require('gulp-sass');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var image = require('gulp-image');
-var rename = require('gulp-rename');
-var cleanCSS = require('gulp-clean-css');
-var del = require('del');
-var bump = require('gulp-bump');
-var zip = require('gulp-zip');
-var size = require('gulp-size');
-var useref = require('gulp-useref');
-var gulpVersionNumber = require("gulp-version-number");
+console.log('------------------------------ Hello!', new Date().getUTCDate());
+
+const gulp = require('gulp');
+const fs = require('fs');
+const path = require('path');
+const browserSync = require('browser-sync').create();
+const less = require('gulp-less');
+const sass = require('gulp-sass');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const gulpIf = require('gulp-if');
+const image = require('gulp-image');
+const rename = require('gulp-rename');
+const cleanCSS = require('gulp-clean-css');
+const del = require('del');
+const bump = require('gulp-bump');
+const zip = require('gulp-zip');
+const size = require('gulp-size');
+const useref = require('gulp-useref');
+const gulpVersionNumber = require("gulp-version-number");
 const cssnano = require('gulp-cssnano');
 
 
-var paths = {
+const paths = {
   styles: {
     src: 'src/scss/*.scss',
     dest: 'dist/css/'
